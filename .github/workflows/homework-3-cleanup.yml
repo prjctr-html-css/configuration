@@ -1,0 +1,16 @@
+name: Delete homework 3 repositories
+
+on: workflow_dispatch
+
+jobs: 
+  homework_removal:
+    name: Delete homework 3 repositories
+    runs-on: ubuntu-latest
+    env:
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: npm ci
+      - run: node ./scripts/homework-3-cleanup.js
