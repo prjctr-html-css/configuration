@@ -34,6 +34,7 @@ const STUDENTS_PATH = 'configuration/students.json';
         dateString,
         NEW_REPO,
         hasRepository,
+        isBeforeToday: isDateBeforeToday(availabilityDate),
       });
       if (isDateBeforeToday(availabilityDate) && !hasRepository) {
         console.log('creating');
